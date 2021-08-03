@@ -63,5 +63,33 @@ namespace RestaurantMenu
                 continue;
             }
         }
+
+        public DateTime DisplayLastUpdated()
+        {
+            Console.WriteLine("Menu last updated on " + LastUpdated);
+            return LastUpdated;
+        }
+
+        public void PrintMenu(MenuItem menuItem)
+        {
+            if (menuItem.Equals(""))
+            {
+                foreach(List < MenuItem > in MenuItems)
+                {
+                    Console.WriteLine(MenuItem);
+                }
+                return;
+            }
+            else
+            {
+                Console.WriteLine(MenuItem);
+                return;
+            }
+        }
+
+        public Boolean CompareMenuItems(MenuItem item1, MenuItem item2)
+        {
+            //do something here override Equals method perhaps?
+        }
     }
 }
