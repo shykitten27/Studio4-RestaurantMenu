@@ -82,8 +82,15 @@ namespace RestaurantMenu
             }
             else
             {
-                Console.WriteLine(MenuItem);
-                return;
+                if(MenuItems.Contains(MenuItem))
+                {
+                    Console.WriteLine(MenuItem);
+                    return;
+                }
+                else //item passed does not exist
+                {
+                    Console.WriteLine(menuItem + " does not exist");
+                }
             }
         }
 
