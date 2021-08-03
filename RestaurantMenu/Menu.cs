@@ -51,5 +51,17 @@ namespace RestaurantMenu
                 }
             }
         }
+
+        public void DisplayNewMenuItems()
+        {
+            foreach (List<MenuItem> in MenuItems)
+            {
+                if (MenuItem.isNew)
+                {
+                    Console.WriteLine(MenuItems);
+                }
+                continue;
+            }
+        }
     }
 }
