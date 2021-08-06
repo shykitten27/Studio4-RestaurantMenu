@@ -16,70 +16,50 @@ namespace RestaurantMenu
             LastUpdated = DateTime.Now;
         }
 
-        private void UpdateMenu(string action, string name, string description, double price, List<string> category, bool isNew)
+        private List<MenuItem> AddItemToMenu(MenuItem newItem)
         {
-            //check for valid actions
-            if (!action.Equals("add") || !action.Equals("remove")) {
-                Console.WriteLine("Invalid action - must be add or remove.");
+            {
+                MenuItems.Add(newItem);
+                Console.WriteLine(newItem + " added to menu.");
+                return MenuItems;
+            }
+
+        }
+
+        private void DeleteMenuItem(MenuItem deletedItem)
+        {
+/*            if (MenuItems.Contains(name)) //check for existence before removing
+            {
+                Console.WriteLine("Menu item " + name + " removed.");
                 return;
             }
-            else if (action.Equals("add")) //ADD 
+            else //does not exist, display warning.*/
             {
-                if (MenuItems.Contains(name)) //check for existence 
-                { 
-                    Console.WriteLine("Menu item already exists."); 
-                    return;
-                }
-                else //does not already exist add new MenuItem.
-                {
-                    MenuItem newItem = new MenuItem(name, description, price, category, true);
-                    Console.WriteLine(name + " added to menu.");
-                    return;
-                }
-            }
-            else if (action.Equals("remove")) //REMOVE 
-            {
-                if (MenuItems.Contains(name)) //check for existence before removing
-                {
-                    Console.WriteLine("Menu item " + name + " removed.");
-                    return;
-                }
-                else //does not exist, display warning.
-                {
-                    Console.WriteLine("Menu item " + name + " does not exist.");
-                    return;
-                }
-            }
-        }
-
-        public void DisplayNewMenuItems()
-        {
-            foreach (List<MenuItem> in MenuItems)
-            {
-                if (MenuItem.isNew)
-                {
-                    Console.WriteLine(MenuItems);
-                }
-                continue;
-            }
-        }
-
-        public DateTime DisplayLastUpdated()
-        {
-            Console.WriteLine("Menu last updated on " + LastUpdated);
-            return LastUpdated;
-        }
-
-        public void PrintMenu(MenuItem menuItem)
-        {
-            if (menuItem.Equals(""))
-            {
-                foreach(List < MenuItem > in MenuItems)
-                {
-                    Console.WriteLine(MenuItem);
-                }
+                //loop thru the list, when the menuItems.Equals(newItem) take that index and remove a reggular for loop
+                Console.WriteLine("Menu item " + deletedItem + " does not exist.");
                 return;
             }
+        }
+        
+
+
+
+        public string DisplayLastUpdated()
+        {
+            return ("Menu was last updated on " + LastUpdated);
+        }
+
+
+        public void PrintMenu(MenuItem menuItem) //print entire menu two different methods
+        {
+/*            if (menuItem.Equals(""))
+            {*/
+                foreach(MenuItem item in MenuItems)
+                {
+                    Console.WriteLine(item);
+                }
+                return;
+ /*           }
             else
             {
                 if(MenuItems.Contains(MenuItem))
@@ -90,13 +70,23 @@ namespace RestaurantMenu
                 else //item passed does not exist
                 {
                     Console.WriteLine(menuItem + " does not exist");
-                }
+                }*/
             }
         }
 
-        public Boolean CompareMenuItems(MenuItem item1, MenuItem item2)
+        public override bool Equals(object obj)
         {
-            //do something here override Equals method perhaps?
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

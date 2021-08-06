@@ -19,8 +19,23 @@ namespace RestaurantMenu
 
             Menu.PrintMenu();
             Menu.PrintMenu("Aviation");
-            Menu.UpdateMenu("remove", "Aviation"); //hmmm...maybe the add should be an overloaded method and the remove only uses item name
+            Menu.DeleteMenuItem("Aviation");
             Menu.PrintMenu();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

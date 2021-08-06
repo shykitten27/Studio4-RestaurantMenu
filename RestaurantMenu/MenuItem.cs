@@ -20,5 +20,34 @@ namespace RestaurantMenu
             Category = category;
             IsNew = IsNew;
         }
+
+        public void DisplayNewMenuItems(item) //new
+        {
+
+            {
+                //if the boolean of the item passed is true
+                //return a message new or not
+            }
+        }
+
+        public Boolean CompareMenuItems(MenuItem item1, MenuItem item2)
+        {
+            //do something here override Equals method perhaps?
+        }
+
+/*        public override bool Equals(object obj) //keep
+        {
+            return base.Equals(obj);
+        }*/
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
