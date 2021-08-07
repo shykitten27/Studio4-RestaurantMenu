@@ -10,14 +10,14 @@ namespace RestaurantMenu
         public DateTime LastUpdated { get; set; } //when the menu was last updated i.e. prices changed or items added
 
         //Constructor
-        public Menu(List<MenuItem> menuItems)
+        public Menu(MenuItem item, List<MenuItem> menuItems)
         {
             MenuItems = menuItems;
             LastUpdated = DateTime.Now;
         }
 
         //Instance methods
-        private List<MenuItem> AddItemToMenu(MenuItem newItem) //returns a List<MenuItem> passes a MenuItem parameter called newItem
+        public List<MenuItem> AddItemToMenu(MenuItem newItem) //returns a List<MenuItem> passes a MenuItem parameter called newItem
         {
             //loop thru the list when the menuItems.Equals(newItem) write a message that newItem already exists
             for (int i = 0; i < MenuItems.Count; i++)
@@ -34,7 +34,7 @@ namespace RestaurantMenu
             return MenuItems; //the List<MenuItem> named MenuItems is returned*/
         }
 
-        private List<MenuItem> DeleteMenuItem(MenuItem deleteItem)
+        public List<MenuItem> DeleteMenuItem(MenuItem deleteItem)
         {
             //loop thru the list when the menuItems.Equals(deleteItem) take that index and remove from the List of MenuItems
             for (int i=0; i<MenuItems.Count; i++)
@@ -56,11 +56,11 @@ namespace RestaurantMenu
             return ("Menu was last updated on " + LastUpdated); //simply print the message with the value of the property DateTime 
         }
 
-        public void PrintMenu(MenuItem menuItem) //print entire List of MenuItems using foreach loop
+        public static void PrintMenu() //print entire List of MenuItems using foreach loop
         {
             foreach(MenuItem item in MenuItems)
             {
-                Console.WriteLine(menuItem);
+                Console.WriteLine(MenuItems);
             }
             return;
         }
@@ -70,9 +70,9 @@ namespace RestaurantMenu
             //loop thru the list when the menuItems.Equals(menuItem) take that index and remove a regular for loop
             for (int i = 0; i < MenuItems.Count; i++)
             {
-                if (MenuItems.Equals(menuItem))
+                if (MenuItems.Equals(menuItem.Name))
                 {
-                    Console.WriteLine(menuItem);
+                    Console.WriteLine(menuItem.Name);
                     return;
                 }
             }

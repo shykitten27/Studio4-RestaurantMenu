@@ -30,14 +30,21 @@ namespace RestaurantMenu
             }
         }
 
-        public Boolean CompareMenuItems(MenuItem item1, MenuItem item2)
+/*        public Boolean CompareMenuItems(MenuItem item1, MenuItem item2)
         {
             //do something here override Equals method perhaps?
-        }
+        }*/
 
-/*        public override bool Equals(object obj) //keep
+/*       public override boolean Equals(object toBeCompared)
         {
-            return base.Equals(obj);
+
+            if (toBeCompared.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            MenuItem m = toBeCompared as MenuItem;
+            return m.MenuItems == MenuItems;
         }*/
 
         public override int GetHashCode()
