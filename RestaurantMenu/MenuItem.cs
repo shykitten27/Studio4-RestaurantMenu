@@ -21,12 +21,12 @@ namespace RestaurantMenu
             IsNew = IsNew;
         }
 
-        public void DisplayNewMenuItems(item) //new
+        public void DisplayNewMenuItem(MenuItem item) //new
         {
-
+            if (IsNew) //true
             {
-                //if the boolean of the item passed is true
-                //return a message new or not
+                Console.WriteLine(item.ToString()); //prints the custom override 
+                return;
             }
         }
 
@@ -42,12 +42,12 @@ namespace RestaurantMenu
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return HashCode.Combine(Name, Description, Price, Category, IsNew);
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return ("Name: " + Name + ", Description: " + Description + "Price: " + Price + "Category: " + Category + "IsNew: " + IsNew);
         }
     }
 }
