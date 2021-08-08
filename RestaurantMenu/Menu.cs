@@ -59,9 +59,9 @@ namespace RestaurantMenu
         public static void PrintMenu() //print entire List of MenuItems using foreach loop
         {
             //foreach
-            foreach(MenuItem menuItem in MenuItems)
+            foreach(MenuItem item in MenuItems)
             {
-                Console.WriteLine(menuItem);
+                Console.WriteLine(item);
             }
             return;
         }

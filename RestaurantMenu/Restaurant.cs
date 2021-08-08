@@ -16,7 +16,7 @@ namespace RestaurantMenu
             MenuItem item4 = new MenuItem("Zucchini Fritté", "Crispy, breaded, oven-fried zucchini served with aioli  dipping sauce.", 5.95, "Appetizer", true);
 
             //instatian a new Menu
-            Menu currentMenu = new Menu(item1);
+            Menu currentMenu = new Menu;
 
 
 
