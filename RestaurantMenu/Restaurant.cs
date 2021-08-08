@@ -21,8 +21,8 @@ namespace RestaurantMenu
 
 
             Menu.PrintMenu(); //entire menu
-            Menu.PrintMenuItem("Aviation");
-            Menu.DeleteMenuItem("Aviation");
+            Menu.PrintMenuItem(item2);
+            Menu.DeleteMenuItem(item2);
             Menu.PrintMenu();
         }
     }
