@@ -61,7 +61,7 @@ namespace RestaurantMenu
             //foreach
             foreach(MenuItem item in MenuItems)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.ToString());
             }
             return;
         }
