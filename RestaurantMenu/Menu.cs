@@ -10,9 +10,9 @@ namespace RestaurantMenu
         public DateTime LastUpdated { get; set; } //when the menu was last updated i.e. prices changed or items added
 
         //Constructor
-        public Menu(MenuItem item, List<MenuItem> menuItems)
+        public Menu()
         {
-            MenuItems = menuItems;
+            MenuItems = new List<MenuItem>(); //creating an empty list of MenuItem
             LastUpdated = DateTime.Now;
         }
 
@@ -39,7 +39,7 @@ namespace RestaurantMenu
             //loop thru the list when the menuItems.Equals(deleteItem) take that index and remove from the List of MenuItems
             for (int i=0; i<MenuItems.Count; i++)
             {
-                if(MenuItems.Equals(deleteItem)) //comparing the entire MenuItem - do we care about case for string values?
+                if(MenuItems[i].Equals(deleteItem)) //comparing the entire MenuItem - do we care about case for string values?
                 {
                         MenuItems.Remove(MenuItems[i]); //removes the newItem to the MenuItems which is the name of the property of Menu.cs
                         Console.WriteLine(deleteItem + " removed from menu.");
@@ -56,7 +56,7 @@ namespace RestaurantMenu
             return ("Menu was last updated on " + LastUpdated); //simply print the message with the value of the property DateTime 
         }
 
-        public static void PrintMenu() //print entire List of MenuItems using foreach loop
+        public void PrintMenu() //print entire List of MenuItems using foreach loop
         {
             //foreach
             foreach(MenuItem item in MenuItems)
@@ -82,7 +82,7 @@ namespace RestaurantMenu
             return;
         }
 
-/*        public override boolean Equals(object toBeCompared)
+        public override bool Equals(object toBeCompared)
         {
 
             if (toBeCompared.GetType() != this.GetType())
@@ -90,9 +90,9 @@ namespace RestaurantMenu
                 return false;
             }
 
-            MenuItem m = toBeCompared as MenuItem;
-            return m.MenuItems == MenuItems;
-        }*/
+            Menu m = toBeCompared as Menu;
+            return m.LastUpdated == LastUpdated && m.MenuItems == MenuItems;
+        }
 
         public override int GetHashCode()
         {

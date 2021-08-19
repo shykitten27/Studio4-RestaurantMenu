@@ -15,15 +15,18 @@ namespace RestaurantMenu
             MenuItem item3 = new MenuItem("Shrimp Fra Diavolo", "Fiery spiced shrimp over a bed of angel hair pasta.", 18.00, "Entrée", true); //new item boolean set
             MenuItem item4 = new MenuItem("Zucchini Fritté", "Crispy, breaded, oven-fried zucchini served with aioli  dipping sauce.", 5.95, "Appetizer", true);
 
-            //instatian a new Menu
-            Menu.AddItemToMenu(item1);
+            //instantiate a new Menu
+            Menu menu1 = new Menu(); //call constructor with no parms to create the actual menu object
+            menu1.AddItemToMenu(item1); //adding items to newly instantiated menu1 <<<******
+            menu1.AddItemToMenu(item2);
+            menu1.AddItemToMenu(item3);
+            menu1.AddItemToMenu(item4);
 
 
-
-            Menu.PrintMenu(); //entire menu
-            Menu.PrintMenuItem(item2);
-            Menu.DeleteMenuItem(item2);
-            Menu.PrintMenu();
+            menu1.PrintMenu(); //entire menu
+            menu1.PrintMenuItem(item2);
+            menu1.DeleteMenuItem(item2);
+            menu1.PrintMenu();
         }
     }
 }
