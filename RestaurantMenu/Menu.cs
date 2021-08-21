@@ -7,7 +7,7 @@ namespace RestaurantMenu
     {
         //Properties
         public List<MenuItem> MenuItems { get; set; }
-        public DateTime LastUpdated { get; set; } //when the menu was last updated i.e. prices changed or items added
+        public DateTime LastUpdated { get; private set; } //when the menu was last updated i.e. prices changed or items added
 
         //Constructor
         public Menu()
