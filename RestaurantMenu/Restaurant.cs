@@ -17,7 +17,7 @@ namespace RestaurantMenu
 
             //instantiate a new Menu
             Menu menu1 = new Menu(); //call constructor with no parms to create the actual menu object
-            Console.WriteLine("adding menu items...");
+            Console.WriteLine("adding items to menu...");
             menu1.AddItemToMenu(item1); //adding items to newly instantiated menu1 <<<******
             menu1.AddItemToMenu(item2);
             menu1.AddItemToMenu(item3);
