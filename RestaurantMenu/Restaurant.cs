@@ -17,15 +17,19 @@ namespace RestaurantMenu
 
             //instantiate a new Menu
             Menu menu1 = new Menu(); //call constructor with no parms to create the actual menu object
+            Console.WriteLine("adding menu items...");
             menu1.AddItemToMenu(item1); //adding items to newly instantiated menu1 <<<******
             menu1.AddItemToMenu(item2);
             menu1.AddItemToMenu(item3);
             menu1.AddItemToMenu(item4);
 
-
+            Console.WriteLine("\nHere comes the menu...");
             menu1.PrintMenu(); //entire menu
+            Console.WriteLine("\nHere comes one menu item...");
             menu1.PrintMenuItem(item2);
+            Console.WriteLine("\nNow deleteing a menu item...");
             menu1.DeleteMenuItem(item2);
+            Console.WriteLine("\nReprint the menu...");
             menu1.PrintMenu();
         }
     }
