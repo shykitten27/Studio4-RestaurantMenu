@@ -23,9 +23,9 @@ namespace RestaurantMenu
             menu1.AddItemToMenu(item3);
             menu1.AddItemToMenu(item4);
 
-            Console.WriteLine("\nHere comes the menu...");
+            Console.WriteLine("\nPrint the entire menu...");
             menu1.PrintMenu(); //entire menu
-            Console.WriteLine("\nHere comes one menu item...");
+            Console.WriteLine("\nPrint one menu item...");
             menu1.PrintMenuItem(item2);
             Console.WriteLine("\nNow deleteing a menu item...");
             menu1.DeleteMenuItem(item2);
