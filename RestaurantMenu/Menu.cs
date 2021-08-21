@@ -30,6 +30,7 @@ namespace RestaurantMenu
             }
             // if it gets to this point, the newItem was not found and can be added to list 
             MenuItems.Add(newItem); //adds the newItem to the MenuItems which is the name of the property of Menu.cs
+            LastUpdated = DateTime.Now; //technically updating the menu with an add so update the LastUpdated property
             Console.WriteLine(newItem + " added to menu."); //message of successful add
             return MenuItems; //the List<MenuItem> named MenuItems is returned*/
         }
@@ -42,6 +43,7 @@ namespace RestaurantMenu
                 if(MenuItems[i].Equals(deleteItem)) //comparing the entire MenuItem - do we care about case for string values?
                 {
                         MenuItems.Remove(MenuItems[i]); //removes the newItem to the MenuItems which is the name of the property of Menu.cs
+                        LastUpdated = DateTime.Now; //technically updating the menu with by removing item so update the LastUpdated property
                         Console.WriteLine(deleteItem + " removed from menu.");
                         return MenuItems;
                     }
